@@ -24,8 +24,12 @@ class _SellerSignupState extends State<SellerSignup> {
                 height: double.infinity,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    // color: Colors.blueGrey,
-                    color: Theme.of(context).primaryColor),
+                  gradient: LinearGradient(
+                    colors: [Colors.purple, Colors.red],
+                    begin: Alignment.bottomRight,
+                    end: Alignment.topLeft,
+                  )
+                ),
                 child: SingleChildScrollView(
                   physics: AlwaysScrollableScrollPhysics(),
                   padding: EdgeInsets.symmetric(
@@ -34,7 +38,7 @@ class _SellerSignupState extends State<SellerSignup> {
                   ),
                   child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
                     Text(
-                      "Sign up page",
+                      "Sign up",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 40,
@@ -63,7 +67,7 @@ class _SellerSignupState extends State<SellerSignup> {
 
   Widget signupButton() {
     return Container(
-      width: double.infinity,
+      width: 150,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         boxShadow: [BoxShadow(color: Colors.black26, offset: Offset(0, 2))],
@@ -85,7 +89,7 @@ class _SellerSignupState extends State<SellerSignup> {
         },
         style: ButtonStyle(
             elevation: MaterialStateProperty.all(15.0),
-            backgroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+            backgroundColor: MaterialStateProperty.all(Colors.green),
             padding: MaterialStateProperty.all(EdgeInsets.all(20.0)),
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
@@ -98,7 +102,9 @@ class _SellerSignupState extends State<SellerSignup> {
   }
 
   Widget passwordField() {
-    return Column(
+    return Container(
+        width: 650,
+        child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
@@ -133,60 +139,63 @@ class _SellerSignupState extends State<SellerSignup> {
               border: InputBorder.none,
               prefixIcon: Icon(
                 Icons.vpn_key,
-                color: Theme.of(context).primaryColor,
+                color: Colors.green,
                 size: 24,
               ),
             ),
           ),
         )
       ],
-    );
+    ));
   }
 
   Widget emailField() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text(
-          "Email",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        Container(
-          alignment: Alignment.centerLeft,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [BoxShadow(color: Colors.black26, offset: Offset(0, 2))],
-          ),
-          height: 60,
-          child: TextFormField(
-            keyboardType: TextInputType.emailAddress,
-            controller: emailController,
-            autofillHints: ["Email"],
+    return Container(
+      width: 650,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            "Email",
             style: TextStyle(
-              fontSize: 20,
-              color: Colors.black87,
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
             ),
-            decoration: InputDecoration(
-              // helperText: "Email",
-              contentPadding: EdgeInsets.only(top: 14),
-              border: InputBorder.none,
-              prefixIcon: Icon(
-                Icons.email,
-                color: Theme.of(context).primaryColor,
-                size: 24,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+            alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [BoxShadow(color: Colors.black26, offset: Offset(0, 2))],
+            ),
+            height: 60,
+            child: TextFormField(
+              keyboardType: TextInputType.emailAddress,
+              controller: emailController,
+              autofillHints: ["Email"],
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.black87,
+              ),
+              decoration: InputDecoration(
+                // helperText: "Email",
+                contentPadding: EdgeInsets.only(top: 14),
+                border: InputBorder.none,
+                prefixIcon: Icon(
+                  Icons.email,
+                  color: Colors.green,
+                  size: 24,
+                ),
               ),
             ),
-          ),
-        )
-      ],
+          )
+        ],
+      ),
     );
   }
 }

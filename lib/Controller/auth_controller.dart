@@ -1,4 +1,5 @@
 import 'package:bunyaad/Controller/services_controller.dart';
+import 'package:bunyaad/View/Model/view_variables.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -25,6 +26,7 @@ class Controller {
     try {
       FirebaseAuth _auth = FirebaseAuth.instance;
       var user = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      ViewVariables.user = user;
       if (user.user != null) {
         //TODO add this user in database
         if (isSeller == true)

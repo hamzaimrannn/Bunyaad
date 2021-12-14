@@ -29,13 +29,12 @@ class _LandingPageState extends State<LandingPage> {
               child: Text("Login",style: TextStyle(color: Colors.white, fontFamily: "Comfortaa"))),
           SizedBox(width: 8.0,),
           TextButton(
-
               onPressed: (){
                 Navigator.of(context).push(MaterialPageRoute(builder: (context)=> SellerSignup()));
           }, child: Text("Become a Seller",style: TextStyle(color: Colors.white, fontFamily: "Comfortaa"),)),
           SizedBox(width: 8.0,),
           TextButton(onPressed: (){
-            print('Sign up');
+            // Navigator.of(context).push(MaterialPageRoute(builder: (context) => SellerSignup()));
           }, child: Text("Signup",style: TextStyle(color: Colors.white, fontFamily: "Comfortaa"))),
           SizedBox(
             width: 50,

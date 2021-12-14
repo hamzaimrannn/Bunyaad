@@ -1,5 +1,7 @@
 import 'package:bunyaad/View/Screens/LoginPage.dart';
+import 'package:bunyaad/View/Screens/ServiceDetails.dart';
 import 'package:bunyaad/View/Screens/buyer_dash.dart';
+import 'package:bunyaad/View/Screens/seller_signup.dart';
 import 'package:bunyaad/View/Subscreens/Add%20Service.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -33,10 +35,12 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
+      // initialRoute: "buyerDashboard",
       home: buyerdashboard(),
-      // routes: [
-      //   "home": (context) => MyHomePage()
-      // ],
+      routes: {
+        "buyerDashboard": (context) => buyerdashboard(),
+        //"servicesDetails": (context,) => ServicesDetails(serviceID: '',),
+      },
     );
   }
 }
